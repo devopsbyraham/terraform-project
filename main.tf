@@ -68,7 +68,7 @@ resource "aws_security_group" "three" {
 }
 
 resource "aws_s3_bucket" "four" {
-  bucket = "my-tf-example-bucket"
+  bucket = "raham0077552bucketterra"
 }
 
 
