@@ -1,14 +1,14 @@
 #this file consists of code for instances and sg
 provider "aws" {
 region = "ap-south-1"
-access_key = ""
-secret_key = ""
+access_key = "AKIARSPNELGYCJEVYJ4K"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-005f9685cb30f234b"
   instance_type   = "t2.micro"
-  key_name        = "eks"
+  key_name        = "rmk8s"
   vpc_security_group_ids = [aws_security_group.three.id]
   availability_zone = "ap-south-1a"
   user_data       = <<EOF
@@ -25,7 +25,7 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-0d81306eddc614a45"
+  ami             = "ami-005f9685cb30f234b"
   instance_type   = "t2.micro"
   key_name        = "eks"
   vpc_security_group_ids = [aws_security_group.three.id]
@@ -71,4 +71,14 @@ resource "aws_s3_bucket" "four" {
   bucket = "raham0077552bucketterra"
 }
 
+resource "aws-iam_user" "five" {
+name = "rahamuser11" 
+}
 
+resource "aws_ebs_volume" "six" {
+ availability_zone = "ap-south-1b"
+  size = 40
+  tags = {
+    Name = "ebs-001"
+  }
+}
