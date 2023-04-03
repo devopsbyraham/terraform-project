@@ -24,3 +24,15 @@ resource "aws_elb" "bar" {
     Name = "raham-tf-elb"
   }
 }
+
+resource "aws_rds_cluster" "default" {
+  cluster_identifier      = "aurora-cluster-demo"
+  engine                  = "aurora-mysql"
+  engine_version          = "5.7.mysql_aurora.2.10.2"
+  availability_zones      = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
+  database_name           = "mydb"
+  master_username         = "foo"
+  master_password         = "Raham@#444555"
+  backup_retention_period = 5
+  preferred_backup_window = "07:00-09:00"
+}
