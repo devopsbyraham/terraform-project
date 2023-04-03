@@ -8,7 +8,7 @@ secret_key = "c+/F00ry7CVgHG5VVO7aO5yFF8ced44qZYx6E5X7"
 resource "aws_instance" "one" {
   ami             = "ami-0d81306eddc614a45"
   instance_type   = "t2.micro"
-  key_name        = "rmk8s"
+  key_name        = "rrraham"
   vpc_security_group_ids = [aws_security_group.three.id]
   availability_zone = "ap-south-1a"
   user_data       = <<EOF
@@ -20,14 +20,14 @@ chkconfig httpd on
 echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "server-1"
+    Name = "web-server-1"
   }
 }
 
 resource "aws_instance" "two" {
   ami             = "ami-0d81306eddc614a45"
   instance_type   = "t2.micro"
-  key_name        = "rmk8s"
+  key_name        = "rrraham"
   vpc_security_group_ids = [aws_security_group.three.id]
   availability_zone = "ap-south-1b"
   user_data       = <<EOF
@@ -39,11 +39,33 @@ chkconfig httpd on
 echo "hai all this is my website created by terraform infrastructurte by raham sir server-2" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "server-2"
+    Name = "web-server-2"
   }
 }
 
-resource "aws_security_group" "three" {
+resource "aws_instance" "three" {
+  ami             = "ami-0d81306eddc614a45"
+  instance_type   = "t2.micro"
+  key_name        = "rrraham"
+  vpc_security_group_ids = [aws_security_group.five.id]
+  availability_zone = "ap-south-1b"
+  tags = {
+    Name = "app-server-1"
+  }
+}
+
+resource "aws_instance" "four" {
+  ami             = "ami-0d81306eddc614a45"
+  instance_type   = "t2.micro"
+  key_name        = "rrraham"
+  vpc_security_group_ids = [aws_security_group.three.id]
+  availability_zone = "ap-south-1b"
+  tags = {
+    Name = "app-server-2"
+  }
+}
+
+resource "aws_security_group" "five" {
   name = "elb-sg"
   ingress {
     from_port   = 22
@@ -67,15 +89,15 @@ resource "aws_security_group" "three" {
   }
 }
 
-resource "aws_s3_bucket" "four" {
+resource "aws_s3_bucket" "six" {
   bucket = "raham0077552bucketterra"
 }
 
-resource "aws_iam_user" "five" {
+resource "aws_iam_user" "seven" {
 name = "rahamuser11" 
 }
 
-resource "aws_ebs_volume" "six" {
+resource "aws_ebs_volume" "eight" {
  availability_zone = "ap-south-1b"
   size = 40
   tags = {
