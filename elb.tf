@@ -28,7 +28,7 @@ resource "aws_elb" "bar" {
 resource "aws_rds_cluster" "default" {
   cluster_identifier      = "aurora-cluster-demo"
   engine                  = "aurora-mysql"
-  engine_version          = "5.7.mysql_aurora.2.10.2"
+  engine_version          = "5.7.mysql_aurora.2.11.2"
   availability_zones      = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
   database_name           = "mydb"
   master_username         = "foo"
