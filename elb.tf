@@ -32,7 +32,7 @@ resource "aws_rds_cluster" "default" {
   availability_zones      = ["ap-south-1a", "ap-south-1b", "ap-south-1c"]
   database_name           = "mydb"
   master_username         = "foo"
-  master_password         = "Raham@#444555"
+  master_password         = "Rahamshaik#444555"
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
 }
