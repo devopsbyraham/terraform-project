@@ -9,7 +9,7 @@ resource "aws_instance" "one" {
   ami             = "ami-0d81306eddc614a45"
   instance_type   = "t2.micro"
   key_name        = "rrraham"
-  vpc_security_group_ids = [aws_security_group.three.id]
+  vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1a"
   user_data       = <<EOF
 #!/bin/bash
@@ -28,7 +28,7 @@ resource "aws_instance" "two" {
   ami             = "ami-0d81306eddc614a45"
   instance_type   = "t2.micro"
   key_name        = "rrraham"
-  vpc_security_group_ids = [aws_security_group.three.id]
+  vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   user_data       = <<EOF
 #!/bin/bash
@@ -58,7 +58,7 @@ resource "aws_instance" "four" {
   ami             = "ami-0d81306eddc614a45"
   instance_type   = "t2.micro"
   key_name        = "rrraham"
-  vpc_security_group_ids = [aws_security_group.three.id]
+  vpc_security_group_ids = [aws_security_group.five.id]
   availability_zone = "ap-south-1b"
   tags = {
     Name = "app-server-2"
