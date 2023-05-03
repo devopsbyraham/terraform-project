@@ -25,7 +25,7 @@ resource "aws_elb" "bar" {
   }
 }
 
- resource "aws_rds_cluster" "default" {
+ /*resource "aws_rds_cluster" "default" {
   cluster_identifier      = "aurora-cluster-demo"
   engine                  = "aurora-mysql"
   engine_version          = "5.7.mysql_aurora.2.11.2"
@@ -35,4 +35,4 @@ resource "aws_elb" "bar" {
   master_password         = "Rahamshaik#444555"
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
-}
+}*/
