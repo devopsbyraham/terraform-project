@@ -90,11 +90,18 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "rahamshaikterra77889900"
+  bucket = "rahamshaikterra77889900prodenv"
 }
 
 resource "aws_iam_user" "seven" {
-name = "rahamuser11" 
+for_each = var.user_names
+name = each.value
+}
+
+variable "user_names" {
+description = "*"
+type = set(string)
+default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
