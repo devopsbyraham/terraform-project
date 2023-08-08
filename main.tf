@@ -20,7 +20,7 @@ chkconfig httpd on
 echo "hai all this is my app created by terraform infrastructurte by raham sir server-1" > /var/www/html/index.html
 EOF
   tags = {
-    Name = "web-serverr-1"
+    Name = "web-server-1"
   }
 }
 
@@ -90,7 +90,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "rahamshaikterra77889900prodenvgshj"
+  bucket = "rahamshaikterra7gsywgys7889900prodenvgshj"
 }
 
 resource "aws_iam_user" "seven" {
@@ -105,7 +105,7 @@ default = ["user1", "user2", "user3", "user4"]
 }
 
 resource "aws_ebs_volume" "eight" {
- availability_zone = "us-east-1a"
+ availability_zone = "eu-west-3a"
   size = 40
   tags = {
     Name = "ebs-001"
