@@ -1,16 +1,16 @@
 #this file consists of code for instances and sg
 provider "aws" {
-region = "us-east-1"
-access_key = "AKIARBQY7LVDFBVJQBDB"
-secret_key = "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"
+region = "eu-west-3"
+access_key = "AKIA36JX34OE4AXKSK7E"
+secret_key = "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"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-06f7633a6b8e0fb0a"
   instance_type   = "t2.micro"
-  key_name        = "terraformnewkpp"
+  key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1a"
+  availability_zone = "eu-west-3a"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -25,11 +25,11 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-06f7633a6b8e0fb0a"
   instance_type   = "t2.micro"
-  key_name        = "terraformnewkpp"
+  key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1b"
+  availability_zone = "eu-west-3b"
   user_data       = <<EOF
 #!/bin/bash
 sudo -i
@@ -44,22 +44,22 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-06f7633a6b8e0fb0a"
   instance_type   = "t2.micro"
-  key_name        = "terraformnewkpp"
+  key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1a"
+  availability_zone = "eu-west-3a"
   tags = {
     Name = "app-server-1"
   }
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-03c7d01cf4dedc891"
+  ami             = "ami-06f7633a6b8e0fb0a"
   instance_type   = "t2.micro"
-  key_name        = "terraformnewkpp"
+  key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
-  availability_zone = "us-east-1b"
+  availability_zone = "eu-west-3b"
   tags = {
     Name = "app-server-2"
   }
