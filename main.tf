@@ -6,7 +6,7 @@ secret_key = "w6etCLGdSsoevq2Low8dtoVaS6yDSo+dWY2Gil4o"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-0b8b5288592eca360"
   instance_type   = "t2.micro"
   key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -25,7 +25,7 @@ EOF
 }
 
 resource "aws_instance" "two" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-0b8b5288592eca360"
   instance_type   = "t2.micro"
   key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -44,7 +44,7 @@ EOF
 }
 
 resource "aws_instance" "three" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-0b8b5288592eca360"
   instance_type   = "t2.micro"
   key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
@@ -55,7 +55,7 @@ resource "aws_instance" "three" {
 }
 
 resource "aws_instance" "four" {
-  ami             = "ami-06f7633a6b8e0fb0a"
+  ami             = "ami-0b8b5288592eca360"
   instance_type   = "t2.micro"
   key_name        = "terrapem"
   vpc_security_group_ids = [aws_security_group.five.id]
