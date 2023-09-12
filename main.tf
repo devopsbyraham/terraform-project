@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "rahamshaikterra7gsywgys7889900prodenvgshj"
+  bucket = "rahamshaikterrttsda7gsywgys7889900prodenvgshj"
 }
 
 resource "aws_iam_user" "seven" {
