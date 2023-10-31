@@ -88,7 +88,7 @@ resource "aws_security_group" "five" {
 }
 
 resource "aws_s3_bucket" "six" {
-  bucket = "devopsbyrahamterraserverbucketoo99"
+  bucket = "devopsbyrahamterraserverbucketoo9988"
 }
 
 resource "aws_iam_user" "seven" {
