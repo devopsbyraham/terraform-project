@@ -1,10 +1,10 @@
 
 provider "aws" {
-region = "ap-southeast-1"
+region = "ap-southeast-4"
 }
 
 resource "aws_instance" "one" {
-  ami             = "ami-06018068a18569ff2"
+  ami             = "ami-0fefa47f3b093ef12 "
   instance_type   = "t2.micro"
   key_name        = "rahamabc"
   vpc_security_group_ids = [aws_security_group.five.id]
